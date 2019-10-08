@@ -63,7 +63,7 @@ func createMenu(menuString string) models.Menu {
 	menu.Price = priceRegexp.FindString(menuString)
 
 	// Get menu Content
-	r := strings.NewReplacer(menu.Title, "", menu.Price, "")
+	r := strings.NewReplacer(menu.Title, "", menu.Price, "", "\n", "")
 	content := r.Replace(menuString)
 	menu.Content = strings.TrimSpace(content)
 
