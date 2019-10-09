@@ -1,23 +1,13 @@
-package main
+package api
 
 import (
 	"encoding/json"
 	"github.com/PuerkitoBio/goquery"
 	"github.com/claudioontheweb/escherwyss-api/models"
-	"github.com/gorilla/mux"
-	"log"
 	"net/http"
 	"regexp"
 	"strings"
 )
-
-func main() {
-
-	r := mux.NewRouter()
-	r.HandleFunc("/", GetMenuHandler)
-	log.Fatal(http.ListenAndServe("localhost:8080", r))
-
-}
 
 func GetMenuHandler(w http.ResponseWriter, r *http.Request) {
 	w. WriteHeader(http.StatusOK)
